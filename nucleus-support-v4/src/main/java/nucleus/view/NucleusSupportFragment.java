@@ -73,4 +73,10 @@ public abstract class NucleusSupportFragment<P extends Presenter> extends Fragme
         super.onPause();
         presenterDelegate.onPause(getActivity().isFinishing());
     }
+    
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        presenterDelegate.onPause(true);
+    }
 }
